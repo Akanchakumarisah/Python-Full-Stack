@@ -3,3 +3,22 @@ Python is a high-level, interpreted, and general-purpose programming language kn
 It supports dynamic typing and automatic memory management, making it ideal for rapid application development.
 Although Python is primarily interpreted, its source code is first compiled to bytecode before being interpreted by the Python Virtual Machine (PVM).
 This gives Python the benefits of both compilation and interpretation.
+
+✅ Key Features:
+
+# High-level and easy to read/write
+
+# Interpreted with an internal bytecode compilation step
+
+# Dynamically typed, no need to declare variable types
+
+# Object-oriented, functional, and procedural support
+
+# Massive standard library and a thriving ecosystem
+
+✅ How do compiler and interpretor both work in python at the same time?
+Compiler: Converts Python source code (.py) into bytecode (.pyc), which is a lower-level, platform-independent representation.
+Interpreter: The Python Virtual Machine then executes the bytecode line by line.
+
+
+
