@@ -1,1 +1,5 @@
-
+🐍 What is Python?
+Python is a high-level, interpreted, and general-purpose programming language known for its simple syntax, readability, and versatility. 
+It supports dynamic typing and automatic memory management, making it ideal for rapid application development.
+Although Python is primarily interpreted, its source code is first compiled to bytecode before being interpreted by the Python Virtual Machine (PVM).
+This gives Python the benefits of both compilation and interpretation.
