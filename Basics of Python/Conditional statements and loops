@@ -1,0 +1,83 @@
+ 1. Conditional Statements (if, elif, else): Conditional statements allow you to make decisions in your program based on certain conditions.
+Basic Syntax:
+if condition:
+    # code block
+elif another_condition:
+    # code block
+else:
+    # code block
+Example code:
+age = 18
+
+if age < 18:
+    print("You are a minor.")
+elif age == 18:
+    print("You just became an adult!")
+else:
+    print("You are an adult.")
+
+#Key Points
+Use indentation (4 spaces) to define the block under if, elif, or else.
+
+You can have multiple elif blocks, but only one else block.
+
+if executes the first block where the condition is True.
+
+2.Loops:Loops allow you to execute a block of code repeatedly.
+
+# For Loop
+Basic Syntax:
+for variable in sequence:
+    # code block
+Example code:
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+# Using range()
+for i in range(5):
+    print(i)  # prints 0 to 4
+
+# While Loop: Executes the block as long as the condition is True.
+Basic Syntax: 
+while condition:
+    # code block
+Example code:
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+🔸 Loop Control Statements:
+| Statement  | Description                               | Example               |
+| ---------- | ----------------------------------------- | --------------------- |
+| `break`    | Exits the loop entirely                   | `if x == 3: break`    |
+| `continue` | Skips current iteration and moves to next | `if x == 3: continue` |
+| `pass`     | Does nothing (placeholder)                | `if x == 3: pass`     |
+
+Use of continue example code:
+for i in range(5):
+    if i == 3:
+        continue  # skip 3
+    print(i)
+Use of break example code:
+for i in range(5):
+    if i == 3:
+        break  # stop at 3
+    print(i)
+
+Summary table of for loop and while loop:
+
+| Feature          | `for` Loop              | `while` Loop                  |
+| ---------------- | ----------------------- | ----------------------------- |
+| Use case         | Iterate over a sequence | Run while a condition is true |
+| Stops when       | Sequence ends           | Condition becomes False       |
+| Can use break    | ✅                       | ✅                             |
+| Can use continue | ✅                       | ✅                             |
+
+
+
+
+
+
+
