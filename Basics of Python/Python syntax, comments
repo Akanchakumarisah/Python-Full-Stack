@@ -1,0 +1,23 @@
+✅ Python Syntax: Syntax refers to the set of rules that define how a Python program is written and interpreted.
+1.No need for semicolons ; or curly braces {}
+For eg: 
+if age > 18:    print("Adult")
+2.Indentation is Mandatory: Default is 4 spaces (or 1 tab). All lines within the same block must be indented equally.
+def greet():
+    print("Hello")
+    print("Welcome!")
+3.Statements end with a new line: You don’t need ;, but can use it to write multiple statements on one line:
+x = 5; y = 10  # Not recommended
+4.Case Sensitive: print, Print, and PRINT are different in Python.
+x = 5       # int
+x = "five"  # now a string
+
+
+✅ 2. Comments in Python
+Single line comment: we can give single line commwnt with # symbol
+eg: # Let's Learn Python
+
+Multi-line Commen: For multi line comment we have to use """ """ symbol
+eg: """"We are learning python full stack
+and our mail goal to complete it in 2 months""""
+
