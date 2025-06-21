@@ -1,0 +1,76 @@
+Operators: Operators are symbols used to perform operations on variables and values. Python supports the following types of operators:
+1. Arithmetic Operators: Used to perform basic mathematical operations.
+| Operator | Description         | Example   | Result |
+| -------- | ------------------- | --------- | ------ |
+| `+`      | Addition            | `10 + 5`  | `15`   |
+| `-`      | Subtraction         | `10 - 5`  | `5`    |
+| `*`      | Multiplication      | `10 * 5`  | `50`   |
+| `/`      | Division            | `10 / 5`  | `2.0`  |
+| `//`     | Floor Division      | `10 // 3` | `3`    |
+| `%`      | Modulus (remainder) | `10 % 3`  | `1`    |
+| `**`     | Exponentiation      | `2 ** 3`  | `8`    |
+
+ 2. Comparison (Relational) Operators: Used to compare two values and return True or False.
+| Operator | Description         | Example  | Result  |
+| -------- | ------------------- | -------- | ------- |
+| `==`     | Equal to            | `5 == 5` | `True`  |
+| `!=`     | Not equal to        | `5 != 3` | `True`  |
+| `>`      | Greater than        | `5 > 3`  | `True`  |
+| `<`      | Less than           | `5 < 3`  | `False` |
+| `>=`     | Greater or equal to | `5 >= 5` | `True`  |
+| `<=`     | Less or equal to    | `3 <= 5` | `True`  |
+
+3.Logical Operators: Used to combine conditional statements.
+| Operator | Description                       | Example          | Result  |
+| -------- | --------------------------------- | ---------------- | ------- |
+| `and`    | Returns `True` if both are `True` | `True and False` | `False` |
+| `or`     | Returns `True` if one is `True`   | `True or False`  | `True`  |
+| `not`    | Reverses the result               | `not True`       | `False` |
+
+ 4. Assignment Operators:Used to assign values to variables.
+| Operator | Description             | Example   | Same As      |
+| -------- | ----------------------- | --------- | ------------ |
+| `=`      | Assign                  | `x = 5`   |              |
+| `+=`     | Add and assign          | `x += 3`  | `x = x + 3`  |
+| `-=`     | Subtract and assign     | `x -= 3`  | `x = x - 3`  |
+| `*=`     | Multiply and assign     | `x *= 2`  | `x = x * 2`  |
+| `/=`     | Divide and assign       | `x /= 2`  | `x = x / 2`  |
+| `//=`    | Floor divide and assign | `x //= 2` | `x = x // 2` |
+| `%=`     | Modulus and assign      | `x %= 2`  | `x = x % 2`  |
+| `**=`    | Exponent and assign     | `x **= 2` | `x = x ** 2` |
+
+5. Bitwise Operators:Operate on bits and perform bit-by-bit operations.
+| Operator | Name        | Example  | Result |     |     |
+| -------- | ----------- | -------- | ------ | --- | --- |
+| `&`      | AND         | `5 & 3`  | `1`    |     |     |
+| \`       | \`          | OR       | \`5    | 3\` | `7` |
+| `^`      | XOR         | `5 ^ 3`  | `6`    |     |     |
+| `~`      | NOT         | `~5`     | `-6`   |     |     |
+| `<<`     | Left Shift  | `5 << 1` | `10`   |     |     |
+| `>>`     | Right Shift | `5 >> 1` | `2`    |     |     |
+
+ 6. Membership Operators:Used to test whether a value is a member of a sequence.
+| Operator | Description                             | Example            | Result |
+| -------- | --------------------------------------- | ------------------ | ------ |
+| `in`     | Returns `True` if value is in sequence  | `"a" in "abc"`     | `True` |
+| `not in` | Returns `True` if value not in sequence | `"d" not in "abc"` | `True` |
+
+ 7. Identity Operators:Used to compare memory locations of two objects.
+| Operator | Description         | Example      | Result         |
+| -------- | ------------------- | ------------ | -------------- |
+| `is`     | True if same object | `a is b`     | `True`/`False` |
+| `is not` | True if not same    | `a is not b` | `True`/`False` |
+
+ Example Code:
+a = 10
+b = 3
+
+print(a + b)    # 13
+print(a > b)    # True
+print(a % b)    # 1
+print(a & b)    # 2
+print(a is b)   # False
+print(a in [1, 2, 10])  # True
+
+
+
