@@ -1,0 +1,63 @@
+✅ Functions in Python: A function is a reusable block of code that performs a specific task.
+ 1. Defining a Function: def : You use the def keyword to define a function.
+Basic structure :
+def function_name(parameters):
+    # code block
+    return value
+Example code:
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Akancha"))
+# Output: Hello, Akancha!
+
+2. Return Values: return: The return statement sends the result back to the caller.
+basic structure:
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+
+3. Function Parameters
+# Positional Parameters
+def greet(name): ...
+greet("Akancha")
+
+# Default Parameters
+def greet(name="Guest"):
+    return f"Hello, {name}"
+
+# Keyword Arguments
+greet(name="Akancha")
+
+# Arbitrary Arguments
+def add_all(*args):  # tuple
+    return sum(args)
+
+def print_info(**kwargs):  # dict
+    print(kwargs)
+
+
+ 4. Scope in Python: Scope defines the visibility of a variable.\
+| Type         | Description                                  |
+| ------------ | -------------------------------------------- |
+| **Local**    | Defined inside a function                    |
+| **Global**   | Defined outside all functions                |
+| **Enclosed** | Defined in outer function (for nested fn)    |
+| **Built-in** | Provided by Python (like `print()`, `len()`) |
+
+x = 10  # global
+
+def example():
+    x = 5  # local
+    print(x)
+
+example()  # 5
+print(x)   # 10
+
+
+
+
+
+
