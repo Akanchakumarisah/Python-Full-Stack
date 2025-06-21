@@ -1,0 +1,83 @@
+Data Types in Python: Python is a dynamically typed language, which means you don’t need to declare data types explicitly—Python infers them automatically.
+✅ Built-in Data Types (Core Categories):
+Category                         	Data Types                    	Example
+Numeric	                          int, float, complex	            10, 3.14, 2 + 3j
+Text	                            str	                            "Hello", 'Python'
+Boolean                         	bool	                           True, False
+Sequence	                        list, tuple, range              [1,2,3], (1,2), range(5)
+Set	                              set, frozenset	                 {1, 2, 3}
+Mapping                         	dict                             {'name': 'Akancha'}
+Binary	                          bytes, bytearray, memoryview	     b"abc"
+None Type                        	NoneType                         	None
+
+| Data Type      | Mutable | Ordered  | Example            |
+| -------------- | ------- | -------- | ------------------ |
+| `int`, `float` | ❌       | ✅        | `10`, `3.14`       |
+| `str`          | ❌       | ✅        | `"hello"`          |
+| `list`         | ✅       | ✅        | `[1, 2, 3]`        |
+| `tuple`        | ❌       | ✅        | `(1, 2, 3)`        |
+| `set`          | ✅       | ❌        | `{1, 2, 3}`        |
+| `dict`         | ✅       | ✅ (3.7+) | `{"key": "value"}` |
+
+Type casting in python:
+Typecasting (or type conversion) is the process of converting one data type into another.
+1. Implicit Typecasting (Automatic): Python automatically converts data types when needed.
+a = 5         # int
+b = 2.0       # float
+c = a + b     # a is implicitly converted to float
+print(c)      # 7.0
+print(type(c))  # <class 'float'>
+
+2. Explicit Typecasting (Manual): You manually convert one data type into another using functions like:
+| Function  | Converts to    |
+| --------- | -------------- |
+| `int()`   | Integer        |
+| `float()` | Floating-point |
+| `str()`   | String         |
+| `bool()`  | Boolean        |
+| `list()`  | List           |
+| `tuple()` | Tuple          |
+| `set()`   | Set            |
+
+🔸 To Integer
+python
+Copy
+Edit
+x = int(3.8)        # 3
+y = int("10")       # 10
+🔸 To Float
+python
+Copy
+Edit
+x = float(5)        # 5.0
+y = float("3.14")   # 3.14
+🔸 To String
+python
+Copy
+Edit
+x = str(100)        # "100"
+y = str(3.14)       # "3.14"
+🔸 To Boolean
+python
+Copy
+Edit
+bool(0)      # False
+bool(1)      # True
+bool("")     # False
+bool("Hi")   # True
+🔸 To List/Tuple/Set
+python
+Copy
+Edit
+list("abc")        # ['a', 'b', 'c']
+tuple([1, 2, 3])   # (1, 2, 3)
+set([1, 2, 2, 3])  # {1, 2, 3}
+⚠️ Invalid Typecasting Examples
+python
+Copy
+Edit
+int("hello")     # ❌ Error: invalid literal for int()
+float("abc")     # ❌ Error: could not convert string to float
+
+
+
