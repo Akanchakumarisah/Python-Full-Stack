@@ -1,1 +1,47 @@
+Variables: Variables are containers for storing data values.
+
+Rules for Naming Variables in Python:
+
+Start with a letter (A–Z or a–z) or an underscore (_)
+
+Do not start with a digit (e.g., 1value is invalid)
+
+Use only letters, numbers, and underscores (_)
+
+No spaces allowed (use underscores instead)
+
+Do not use special characters like @, #, $, %, etc.
+
+Case-sensitive (e.g., age and Age are different)
+
+Do not use Python reserved keywords (like if, class, while, etc.)
+
+Use descriptive names (e.g., student_name, not just s)
+
+Follow snake_case naming convention for readability
+
+Constants are written in UPPERCASE by convention
+
+Variable Declaration in Python:
+x = 10          # int
+pi = 3.14       # float
+is_active = True  # bool
+message = "Hello" # str
+
+KeyWords: Keywords in Python are reserved words that have special meanings. They are part of the syntax of the language and cannot be used as variable names, function names, or identifiers.
+
+🔹Common Keyword Categories
+Category	                Keywords
+Control Flow	           if, else, elif, while, for, break, continue
+Functions	               def, return, lambda
+Classes         	       class
+Exception Handling	     try, except, finally, raise, assert
+Boolean	                 True, False, None
+Logic	                   and, or, not, is, in
+Async                  	 async, await
+Importing	               import, from, as
+Scope	                   global, nonlocal
+Miscellaneous           	pass, yield, del, with
+
+
 
