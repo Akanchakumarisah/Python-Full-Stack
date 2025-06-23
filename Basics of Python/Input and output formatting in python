@@ -1,0 +1,7 @@
+ 1. input() Function – Taking User Input,The input() function is used to get data from the user.It always returns data as a string.
+basic syntax:
+variable = input("Enter something: ")
+2.print() function used to print the output to the consol.
+example:
+name = input("Enter your name: ")
+print("Hello", name)
