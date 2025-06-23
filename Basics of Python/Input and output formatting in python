@@ -5,3 +5,15 @@ variable = input("Enter something: ")
 example:
 name = input("Enter your name: ")
 print("Hello", name)
+
+
+| Feature                | Syntax Example                     |
+| ---------------------- | ---------------------------------- |
+| Input from user        | `input("Enter value: ")`           |
+| Output to console      | `print("Hello")`                   |
+| f-string               | `f"My name is {name}"`             |
+| format() method        | `"{} {}".format("Hello", "World")` |
+| Percent formatting     | `"Name is %s" % name`              |
+| Print with separator   | `print("A", "B", sep="-")`         |
+| Print with end keyword | `print("A", end="")`               |
+
