@@ -1,1 +1,175 @@
+why oops?
+To follow the set of structure for writting a code to make the code flexible and provide security, Reusability,redability,scalable,code-organized,code-strucuture we use oops.
+It is a programming paradigm based on the concept of objects, which contain data (attributes) and behavior (methods).
+1. Classes and Objects
+ Class
+A blueprint or template to create objects.
+
+Defines attributes (variables) and methods (functions).
+
+ Object
+An instance of a class.
+
+Created using the class:
+Example code:
+class Student:
+    # attribute
+    college = "ABC University"
+
+    # method
+    def greet(self):
+        print("Hello, I am a student.")
+
+# create object
+s1 = Student()
+print(s1.college)  # Output: ABC University
+s1.greet()         # Output: Hello, I am a student.
+--------------------------------------------------------
+
+
+2. Constructors (__init__):
+
+The __init__ method is called automatically when an object is created.
+
+Used to initialize object attributes.
+example code:
+class Student:
+    def __init__(self, name, age):
+        self.name = name    # instance variable
+        self.age = age
+
+    def show(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+s1 = Student("Akancha", 21)
+s1.show()  # Output: Name: Akancha, Age: 21
+✅ self refers to the current object (instance).
+
+----------------------------------------------------------------
+
+ 3. Inheritance:
+A mechanism to acquire properties and methods of another class.
+
+Promotes code reusability.
+example code:
+class Parent:
+    def display(self):
+        print("This is parent class.")
+
+class Child(Parent):
+    def show(self):
+        print("This is child class.")
+
+c1 = Child()
+c1.display()  # Inherited method
+c1.show()
+
+
+Types of Inheritance:
+| Type             | Description                                | Example                   |
+| ---------------- | ------------------------------------------ | ------------------------- |
+| **Single**       | One child inherits from one parent         | `class B(A):`             |
+| **Multiple**     | Child inherits from multiple parents       | `class C(A,B):`           |
+| **Multilevel**   | Chain of inheritance                       | `class C(B):`             |
+| **Hierarchical** | Multiple children inherit from same parent | `class B(A), class C(A):` |
+| **Hybrid**       | Combination of above types                 | Mixed                     |
+
+
+
+Using super(): Used to call parent class methods or constructor in child class.:
+class Parent:
+    def __init__(self):
+        print("Parent constructor")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        print("Child constructor")
+
+c = Child()
+# Output:
+# Parent constructor
+# Child constructor
+----------------------------------------------------------------------------------------------------------
+
+
+4. Encapsulation:
+Wrapping data (variables) and code (methods) together in a single unit (class).
+
+Restricts direct access to data to protect object integrity.
+
+Access Modifiers in Python:
+
+| Type      | Syntax        | Description                                            |
+| --------- | ------------- | ------------------------------------------------------ |
+| Public    | `self.name`   | Accessible everywhere                                  |
+| Protected | `self._name`  | Convention: for internal use (can be accessed outside) |
+| Private   | `self.__name` | Name mangling makes it inaccessible directly           |
+
+
+ Example of Encapsulation:
+
+class Student:
+    def __init__(self, name, age):
+        self.__name = name   # private variable
+        self.age = age
+
+    def get_name(self):  # getter
+        return self.__name
+
+    def set_name(self, name):  # setter
+        self.__name = name
+
+s = Student("Akancha", 21)
+print(s.get_name())
+s.set_name("Riya")
+print(s.get_name())
+# print(s.__name) --> Error
+--------------------------------------------------------------------------------------------------------------------------------
+
+ 5. Polymorphism:
+Means "many forms".
+
+The same function/method name behaves differently based on context.
+
+🔸 Types of Polymorphism:
+1) Method Overloading (not directly supported in Python):
+Python uses default arguments to achieve similar functionality.:
+class Demo:
+    def add(self, a, b, c=0):
+        return a + b + c
+
+d = Demo()
+print(d.add(2,3))     # 5
+print(d.add(2,3,4))   # 9
+
+2) Method Overriding: Child class overrides method of parent class:
+class Parent:
+    def show(self):
+        print("Parent method")
+
+class Child(Parent):
+    def show(self):
+        print("Child method")
+
+c = Child()
+c.show()  # Output: Child method
+
+
+3) Operator Overloading: Same operator performs different operations based on operand type:
+print(5 + 3)          # 8 (int addition)
+print("Akancha" + " Sah")  # Akancha Sah (string concatenation)
+--------------------------------------------------------------------------------------------------------------------------
+
+oops summary table:
+
+| Concept           | Description                                        | Example                    |
+| ----------------- | -------------------------------------------------- | -------------------------- |
+| **Class**         | Blueprint for objects                              | `class Student: ...`       |
+| **Object**        | Instance of class                                  | `s1 = Student()`           |
+| **Constructor**   | `__init__` method to initialize object             | `def __init__()`           |
+| **Inheritance**   | Child class inherits from parent class             | `class Child(Parent): ...` |
+| **Encapsulation** | Restricting access to data using private/protected | `self.__name`              |
+| **Polymorphism**  | Same function/operator behaves differently         | `+` for int and str        |
+
 
