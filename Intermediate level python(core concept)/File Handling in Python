@@ -1,1 +1,116 @@
+Why File Handling?
+File handling allows you to store, read, and modify data permanently on disk, rather than keeping it only in memory.
+
+ 1. Opening a File – open() function:
+syntax: file_object = open("filename", "mode")
+
+✅ Modes in open():
+| Mode  | Description                                                        |
+| ----- | ------------------------------------------------------------------ |
+| `'r'` | Read (default). File must exist.                                   |
+| `'w'` | Write. Creates file if it doesn’t exist; **overwrites if exists**. |
+| `'a'` | Append. Creates file if it doesn’t exist; **adds content at end**. |
+| `'x'` | Create. Fails if file exists.                                      |
+| `'b'` | Binary mode (e.g., images, pdfs).                                  |
+| `'t'` | Text mode (default).                                               |
+
+
+✅ Modes can be combined, e.g. 'rb', 'wb'.
+
+ 2. Reading from a File:
+example code:
+file = open("sample.txt", "r")
+content = file.read()  # reads entire file
+print(content)
+file.close()
+Other Reading Methods:
+| Method             | Description                 |
+| ------------------ | --------------------------- |
+| `file.read(n)`     | Reads first `n` characters. |
+| `file.readline()`  | Reads one line.             |
+| `file.readlines()` | Returns list of all lines.  |
+
+
+Example with readline() and readlines():
+file = open("sample.txt", "r")
+
+line1 = file.readline()
+print(line1)
+
+lines = file.readlines()
+print(lines)
+
+file.close()
+
+
+3. Writing to a File:
+Example with write():
+file = open("sample.txt", "w")
+file.write("Hello, this is a new line.\n")
+file.write("Second line.")
+file.close()
+
+
+# If the file exists, it overwrites content.
+Use 'a' mode to append instead:
+file = open("sample.txt", "a")
+file.write("\nAppending this line.")
+file.close()
+
+
+ 4. Using with Statement (Context Manager): Using with is recommended because it automatically closes the file, even if errors occur:
+with open("sample.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+5. Writing with with:
+with open("sample.txt", "w") as file:
+    file.write("This is written using with statement.")
+
+6. Reading and Writing Binary Files: Used for images, pdfs, videos, etc:
+# Reading binary
+with open("image.jpg", "rb") as file:
+    data = file.read()
+
+# Writing binary
+with open("copy.jpg", "wb") as file:
+    file.write(data)
+
+7. File Object Methods Summary:
+| Method             | Description                      |
+| ------------------ | -------------------------------- |
+| `read()`           | Reads entire file.               |
+| `read(n)`          | Reads first `n` characters.      |
+| `readline()`       | Reads single line.               |
+| `readlines()`      | Returns list of lines.           |
+| `write(str)`       | Writes string to file.           |
+| `writelines(list)` | Writes list of strings to file.  |
+| `seek(offset)`     | Moves cursor to `offset` bytes.  |
+| `tell()`           | Returns current cursor position. |
+| `close()`          | Closes the file.                 |
+
+
+ Key Points
+✅ Always close files after use (or use with).
+✅ write() and append() do not add newline automatically – use \n.
+✅ Use binary mode for non-text files.
+
+Mini Example Program:
+# Write to a file
+with open("demo.txt", "w") as f:
+    f.write("Python file handling is easy.\n")
+    f.write("This is the second line.\n")
+
+# Read from the file
+with open("demo.txt", "r") as f:
+    for line in f:
+        print(line.strip())
+
+
+
+
+
+
+
+
 
