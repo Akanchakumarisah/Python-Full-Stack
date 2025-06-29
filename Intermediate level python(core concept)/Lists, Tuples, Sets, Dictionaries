@@ -1,1 +1,160 @@
+List: List is mutable and ordred collection of element it allows duplicates,It can contains different data types i.e number, string, boolean, etc.And can be define by using square braces [].
+for example:
+fruits=["apple","banana","orange","cherry"]
+numbers=[1,2,3,4,5,6]
+
+ CRUD Operations on Lists:
+CRUD stands for:
+
+C – Create
+
+R – Read
+
+U – Update
+
+D – Delete
+
+
+| Operation  | Method/Example                 | Description           |
+| ---------- | ------------------------------ | --------------------- |
+| **Create** | `fruits = ["apple", "banana"]` | Initialize list       |
+| **Read**   | `fruits[0]`                    | Access first element  |
+| **Update** | `fruits[1] = "mango"`          | Change second element |
+| **Delete** | `del fruits[0]`                | Delete first element  |
+|            | `fruits.remove("mango")`       | Remove by value       |
+|            | `fruits.pop()`                 | Remove last element   |
+
+
+common list methods:
+There are set of built in methods that you can use in list are mentioned below:
+
+| Method                | Description                                                         | Example                            |
+| --------------------- | ------------------------------------------------------------------- | ---------------------------------- |
+| `append(x)`           | Adds item `x` to the end of the list                                | `fruits.append("mango")`           |
+| `insert(i, x)`        | Inserts item `x` at position `i`                                    | `fruits.insert(1, "kiwi")`         |
+| `extend(iterable)`    | Adds all elements of an iterable to the list                        | `fruits.extend(["grape", "pear"])` |
+| `remove(x)`           | Removes first occurrence of item `x`                                | `fruits.remove("apple")`           |
+| `pop([i])`            | Removes and returns item at index `i` (last if not specified)       | `fruits.pop()`                     |
+| `clear()`             | Removes all items from the list                                     | `fruits.clear()`                   |
+| `index(x)`            | Returns index of first occurrence of item `x`                       | `fruits.index("banana")`           |
+| `count(x)`            | Returns count of how many times item `x` appears                    | `fruits.count("apple")`            |
+| `sort(reverse=False)` | Sorts the list in ascending order (or descending if `reverse=True`) | `fruits.sort()`                    |
+| `reverse()`           | Reverses the list in place                                          | `fruits.reverse()`                 |
+| `copy()`              | Returns a **shallow copy** of the list                              | `new_fruits = fruits.copy()`       |
+
+------------------------------------------------------------------------------------------------------------------------------
+Tuple: Tuple is immutable(unchangable) and ordred collection of an element,Tuples are written in round brackets (), it is Faster than lists and  allows duplicates,Used for fixed data (e.g., coordinates).
+for example:
+cities_tuples=("phagwara","jalandhar",ludhiyana")
+print(cities_tuples)
+print(cities_tuples[0])// output: phagwara
+
+CRUD Operations on Tuples:
+| Operation  | Example       | Description             |
+| ---------- | ------------- | ----------------------- |
+| **Create** | `t = (1,2,3)` | Initialize tuple        |
+| **Read**   | `t[0]`        | Access first element    |
+| **Update** | ❌             | Not allowed (immutable) |
+| **Delete** | `del t`       | Delete entire tuple     |
+
+1) To access an element from the tuple first we have to unpack the tuple:Tuple Unpacking in Python:
+ What is Tuple Unpacking?
+Tuple unpacking allows you to assign each element of a tuple to separate variables in a single line.
+
+Syntax:
+tuple_name = (value1, value2, value3)
+var1, var2, var3 = tuple_name
+Example code:
+person = ("Akancha", 21, "India")
+name, age, country = person
+
+print(name)     # Akancha
+print(age)      # 21
+print(country)  # India
+-----------------------------------------------
+Using Tuple Unpacking in Functions:You can return multiple values from a function using tuple unpacking:
+def get_coordinates():
+    x = 10
+    y = 20
+    return x, y  # returns a tuple (10, 20)
+
+x_coord, y_coord = get_coordinates()
+print(x_coord)  # 10
+print(y_coord)  # 20
+------------------------------------------------------
+Unpacking with * (Star Operator):You can use * to capture multiple values into a list:
+numbers = (1, 2, 3, 4, 5)
+a, b, *rest = numbers
+
+print(a)     # 1
+print(b)     # 2
+print(rest)  # [3, 4, 5]
+
+Key Points
+✅ Number of variables must match the number of elements (unless using *).
+✅ Works with any iterable, not just tuples (e.g. lists, sets).
+✅ Commonly used in loops:
+students = [("Akancha", 21), ("Ravi", 22)]
+
+for name, age in students:
+    print(f"{name} is {age} years old")
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Sets: Set is unordred collection of unique and immutable elements,we can add or remove in a set,sets are written in a curly bracket {},duplicate is not allow in set and it is unchangable.
+for example:
+set={"apple","banana","cherry"}
+print(set)
+
+CRUD Operations on Sets:
+| Operation  | Method/Example         | Description                            |
+| ---------- | ---------------------- | -------------------------------------- |
+| **Create** | `s = {1,2,3}`          | Initialize set                         |
+| **Read**   | `for i in s: print(i)` | Iterate (no index access)              |
+| **Update** | `s.add(4)`             | Add element                            |
+|            | `s.update([5,6])`      | Add multiple elements                  |
+| **Delete** | `s.remove(2)`          | Remove element (error if not found)    |
+|            | `s.discard(5)`         | Remove element (no error if not found) |
+|            | `s.pop()`              | Remove random element                  |
+|            | `s.clear()`            | Empty the set                          |
+
+Set Operations:
+a = {1,2,3}
+b = {3,4,5}
+
+a.union(b)        # {1,2,3,4,5}
+a.intersection(b) # {3}
+a.difference(b)   # {1,2}
+-----------------------------------------------------------------------------------
+
+Dictionary: Dictionary is mutable and is ordred and can be declare with curly bracket {} and it in in key and value pair.
+for example:
+student = {"name":"akancha","age":"23"}
+print(student)
+print(student["name"])
+
+ CRUD Operations on Dictionaries:
+| Operation  | Method/Example            | Description                 |
+| ---------- | ------------------------- | --------------------------- |
+| **Create** | `d = {"a":1, "b":2}`      | Initialize dictionary       |
+| **Read**   | `d["a"]`                  | Access value by key         |
+|            | `d.get("c", "Not Found")` | Safe access with default    |
+| **Update** | `d["b"] = 5`              | Update existing key         |
+|            | `d["c"] = 10`             | Add new key-value pair      |
+| **Delete** | `del d["a"]`              | Delete key                  |
+|            | `d.pop("b")`              | Remove key and return value |
+|            | `d.clear()`               | Remove all items            |
+
+ Common Dictionary Methods:
+d.keys()    # Returns list of keys
+d.values()  # Returns list of values
+d.items()   # Returns list of (key, value) tuples
+
+
+
+
+
+
+
+
 
