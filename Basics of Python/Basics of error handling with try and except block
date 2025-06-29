@@ -1,1 +1,64 @@
+#Why Use Error Handling?
+Error handling allows your program to handle unexpected errors gracefully without crashing abruptly.
+1. The try-except Block:
+try:
+    # code that might raise an error
+except ExceptionType:
+    # code to handle the error
+example code:
+try:
+    x = int(input("Enter a number: "))
+    print("You entered:", x)
+except ValueError:
+    print("Invalid input! Please enter a valid number.")
+output: If the user enters a non-integer value (like "abc"), it raises a ValueError and prints the error message.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ 2. Generic Exception Handling
+If you don't specify an exception type, it will catch all types of errors (not recommended for large programs, but useful for quick handling):
+try:
+    result = 10 / 0
+except:
+    print("Something went wrong!")
+output:division by zero error
+--------------------------------------------------------------------------------------------------------
+
+ 3. Handling Multiple Exception Types: we can handle multiplr error together:
+example code:
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ValueError:
+    print("Invalid input! Please enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+-------------------------------------------------------------------------------------------------------------------
+ 4. Using else with try-except: we can also use else block with the try and except block, The else block runs if no exception occurs:
+example code:
+try:
+    x = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input!")
+else:
+    print("You entered:", x)
+--------------------------------------------------------------------------------------------------------------------------
+ 5. Using finally: The finally block runs no matter what (whether an exception occurs or not). Useful for cleanup actions like closing files or database connections.
+example code:
+try:
+    file = open("sample.txt", "r")
+    data = file.read()
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    file.close()
+    print("File closed.")
+-------------------------------------------------------------------------------------------------------------
+#Key Points Summary
+try: Write code that might cause an error.
+
+except: Handle the error gracefully.
+
+else: Runs if no exception occurs.
+
+finally: Runs regardless of exceptions, for cleanup tasks.
+
 
