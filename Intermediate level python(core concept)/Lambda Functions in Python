@@ -1,0 +1,78 @@
+ What is a Lambda Function?
+Lambda function is a small anonymous function (i.e., without a name).
+Defined using the lambda keyword.
+Can take any number of arguments, but can have only one expression.
+basic syntax:
+lambda arguments: expression
+Where:
+arguments: input parameters
+expression: single expression evaluated and returned
+
+Example 1: Basic Lambda:
+
+# Traditional function
+def add(a, b):
+    return a + b
+
+# Lambda equivalent
+add_lambda = lambda a, b: a + b
+
+print(add_lambda(5, 3))  # Output: 8
+-------------------------------------------------------------------------------
+Why use Lambda Functions?
+To create quick, throwaway functions without formally defining them.
+Useful when passing functions as arguments to higher-order functions like map, filter, reduce.
+
+-------------------------------------------------------------
+2. Using Lambda with map():
+map() applies a function to each item in an iterable.
+example:
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25] // Each number is squared.
+------------------------------------------------------------------------------------------
+ 3. Using Lambda with filter(): filter() filters items in an iterable based on a condition.
+
+example code:
+numbers = [1, 2, 3, 4, 5]
+even = list(filter(lambda x: x % 2 == 0, numbers))
+print(even)  # Output: [2, 4]//Filters only even numbers.
+
+----------------------------------------------------------------------------------------
+4. Using Lambda with reduce(): reduce() from functools module reduces an iterable to a single value by applying a function cumulatively.
+
+from functools import reduce
+numbers = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, numbers)
+print(product)  # Output: 120 // Calculates 1 * 2 * 3 * 4 * 5 = 120.
+-----------------------------------------------------------------------------------------------------
+ 5. Lambda with Sorting (Custom Key): Lambda functions are used as custom keys for sorting lists of tuples or dictionaries.
+example code:
+students = [("Akancha", 21), ("Ravi", 20), ("Priya", 22)]
+# Sort by age
+students.sort(key=lambda x: x[1])
+print(students)
+# Output: [('Ravi', 20), ('Akancha', 21), ('Priya', 22)]
+----------------------------------------------------------------------------------------------------------------------
+6. Lambda with Default Functions:Lambda can also be used in place of small callback functions:
+button = lambda : print("Button clicked")
+button()  # Output: Button clicked
+-------------------------------------------------------------------------------
+Key Points Summary
+✅ Lambda functions are anonymous, single-expression functions.
+✅ Used with map, filter, reduce, sorting, and GUI callbacks.
+✅ Improves code brevity and readability when functions are small.
+❌ Avoid complex logic in lambda; use def functions for clarity.
+
+
+
+
+
+
+
+
+
+
+
+
+
