@@ -1,0 +1,12 @@
+div {
+    background-color: antiquewhite;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 15px;
+}
+
+span {
+    background-color: beige;
+    display: block;
+}

@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    background-color: darkgrey;
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+
+}
+
+.animation_element{
+    height: 15%;
+    width: 15%;
+    margin: 0.8rem;
+    background-color: blanchedalmond;
+    color:black;
+    border: 0.2rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: fade;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes fade {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.animate_element2{
+    height: 15%;
+    width: 15%;
+    background-color: blanchedalmond;
+    color: black;
+    border: 0.2rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation-name: slideEffect;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.53, 1.02, 0.59, -0.49);
+}
+
+@keyframes slideEffect {
+    from{
+        top: 0px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 1170px;
+    }
+}
