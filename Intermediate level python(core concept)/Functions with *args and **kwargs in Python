@@ -1,1 +1,103 @@
+Why use *args and **kwargs?\
+They allow functions to accept:
+Arbitrary number of positional arguments (*args)
+Arbitrary number of keyword arguments (**kwargs)
+Thus, making functions more flexible and reusable.
+---------------------------------------------------------------------
+1. *args (Non-keyword Variable Arguments)
+*args allows you to pass multiple positional arguments to a function.
+Inside the function, args is treated as a tuple.
+example code:
+1)
+def func(*args):
+    for i in args:
+        print(i)
+2)
+def add_numbers(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+print(add_numbers(1, 2, 3))         # Output: 6
+print(add_numbers(5, 10, 15, 20))   # Output: 50
+*args can accept any number of arguments during function call.
+
+-------------------------------------------------------------------------------------
+2. **kwargs (Keyword Variable Arguments)
+**kwargs allows you to pass multiple keyword arguments (i.e., named arguments) to a function.
+Inside the function, kwargs is treated as a dictionary.
+example code:
+1)
+def func(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
+2)
+def student_details(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+student_details(name="Akancha", age=21, course="Python")
+Output:
+name: Akancha
+age: 21
+course: Python
+
+
+----------------------------------------------------------------------------------------------
+3. Using *args and **kwargs Together
+You can combine both in a function definition:
+example code:
+1)
+def demo_func(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+demo_func(1, 2, 3, name="Akancha", age=21)
+output:
+Args: (1, 2, 3)
+Kwargs: {'name': 'Akancha', 'age': 21}
+----------------------------------------------------------------------------------------------
+
+# Order of Parameters in Function Definition:
+1.Regular parameters
+2.*args
+3.**kwargs
+example code:
+def example(a, *args, **kwargs):
+    pass
+--------------------------------------------------
+4. When to Use *args vs **kwargs?
+| Usage      | Purpose                                    | Example            |
+| ---------- | ------------------------------------------ | ------------------ |
+| `*args`    | Unknown number of **positional arguments** | Sum, max functions |
+| `**kwargs` | Unknown number of **keyword arguments**    | Config, settings   |
+--------------------------------------------------------------------------------------------------
+
+5. Unpacking with * and **: You can unpack lists/tuples and dictionaries while calling functions.
+example code:
+def greet(name, age):
+    print(f"Hello {name}, you are {age} years old.")
+
+data = ("Akancha", 21)
+greet(*data)  # Unpacks as greet("Akancha", 21)
+
+info = {"name": "Akancha", "age": 21}
+greet(**info)  # Unpacks as greet(name="Akancha", age=21)
+----------------------------------------------------------------------------
+Key Points Summary
+✅ *args → Multiple positional arguments (tuple)
+✅ **kwargs → Multiple keyword arguments (dictionary)
+✅ Can be used together in functions for flexibility
+✅ Useful in function wrappers, decorators, API designs, etc.
+
+
+
+
+
+
+
+
+
+
 
