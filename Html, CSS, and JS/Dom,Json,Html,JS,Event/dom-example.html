@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .my-class { background-color: #f0f0f0; padding: 5px; }
+        button { margin: 5px; padding: 8px; }
+        #output { margin-top: 10px; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation Example</h1>
+    <div id="container" class="container">
+        <p class="my-class">First Paragraph</p>
+        <p class="my-class">Second Paragraph</p>
+        <img id="myImage" src="placeholder.jpg" alt="Sample Image">
+    </div>
+
+    <h2>Test DOM Methods</h2>
+    <button onclick="selectById()">Select by ID</button>
+    <button onclick="selectByClass()">Select by Class</button>
+    <button onclick="selectByTag()">Select by Tag</button>
+    <button onclick="selectByQuery()">Query Selector</button>
+    <button onclick="showFirstChild()">Show First Child</button>
+    <button onclick="showFirstElementChild()">Show First Element Child</button>
+    <button onclick="showChildNodes()">Show Child Nodes</button>
+    <button onclick="showLastChild()">Show Last Child</button>
+    <button onclick="showNextSibling()">Show Next Sibling</button>
+    <button onclick="getAttr()">Get Attribute</button>
+    <button onclick="setAttr()">Set Attribute</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="appendElement()">Append Element</button>
+    <button onclick="prependElement()">Prepend Element</button>
+    <button onclick="beforeElement()">Before Element</button>
+    <button onclick="afterElement()">After Element</button>
+
+    <div id="output">Results will appear here...</div>
+
+    <script>
+        // Function to display results in the output div
+        function displayOutput(message) {
+            document.getElementById("output").textContent = message;
+        }
+
+        // DOM Manipulation: Select by ID
+        function selectById() {
+            const element = document.getElementById("container");
+            element.style.borderColor = "blue";
+            displayOutput("Selected element with ID 'container' and changed border color to blue.");
+        }
+
+        // DOM Manipulation: Select by Class
+        function selectByClass() {
+            const elements = document.getElementsByClassName("my-class");
+            for (let el of elements) {
+                el.style.backgroundColor = "lightyellow";
+            }
+            displayOutput("Selected all elements with class 'my-class' and changed background to lightyellow.");
+        }
+
+        // DOM Manipulation: Select by Tag
+        function selectByTag() {
+            const paragraphs = document.getElementsByTagName("p");
+            for (let p of paragraphs) {
+                p.style.color = "green";
+            }
+            displayOutput("Selected all <p> tags and changed text color to green.");
+        }
+
+        // DOM Manipulation: Query Selector
+        function selectByQuery() {
+            const element = document.querySelector(".my-class");
+            const allElements = document.querySelectorAll(".my-class");
+            element.style.fontWeight = "bold";
+            displayOutput(`Selected first element with class 'my-class' and made it bold. Total found: ${allElements.length}`);
+        }
+
+        // Navigators: firstChild
+        function showFirstChild() {
+            const parent = document.getElementById("container");
+            const first = parent.firstChild;
+            displayOutput(`First child node type: ${first.nodeName}`);
+        }
+
+        // Navigators: firstElementChild
+        function showFirstElementChild() {
+            const parent = document.getElementById("container");
+            const firstElement = parent.firstElementChild;
+            firstElement.style.border = "2px solid red";
+            displayOutput("First element child selected and given a red border.");
+        }
+
+        // Navigators: childNodes
+        function showChildNodes() {
+            const parent = document.getElementById("container");
+            const children = parent.childNodes;
+            let nodeNames = Array.from(children).map(node => node.nodeName).join(", ");
+            displayOutput(`Child nodes: ${nodeNames}`);
+        }
+
+        // Navigators: lastChild
+        function showLastChild() {
+            const parent = document.getElementById("container");
+            const last = parent.lastChild;
+            displayOutput(`Last child node type: ${last.nodeName}`);
+        }
+
+        // Navigators: nextSibling
+        function showNextSibling() {
+            const element = document.getElementById("myImage");
+            const next = element.nextSibling;
+            displayOutput(`Next sibling node type: ${next ? next.nodeName : "None"}`);
+        }
+
+        // Targeting Attributes: getAttribute
+        function getAttr() {
+            const element = document.getElementById("myImage");
+            const src = element.getAttribute("src");
+            displayOutput(`Image source attribute: ${src}`);
+        }
+
+        // Targeting Attributes: setAttribute
+        function setAttr() {
+            const element = document.getElementById("myImage");
+            element.setAttribute("src", "new-image.jpg");
+            displayOutput("Image source changed to 'new-image.jpg'.");
+        }
+
+        // Targeting Attributes: style
+        function changeStyle() {
+            const element = document.getElementById("container");
+            element.style.backgroundColor = "lightblue";
+            displayOutput("Container background color changed to lightblue.");
+        }
+
+        // Insert Element: append
+        function appendElement() {
+            const parent = document.getElementById("container");
+            const newDiv = document.createElement("div");
+            newDiv.textContent = "Appended Div";
+            newDiv.className = "my-class";
+            parent.append(newDiv);
+            displayOutput("Appended a new div to the container.");
+        }
+
+        // Insert Element: prepend
+        function prependElement() {
+            const parent = document.getElementById("container");
+            const newDiv = document.createElement("div");
+            newDiv.textContent = "Prepended Div";
+            newDiv.className = "my-class";
+            parent.prepend(newDiv);
+            displayOutput("Prepended a new div to the container.");
+        }
+
+        // Insert Element: before
+        function beforeElement() {
+            const element = document.getElementById("myImage");
+            const newDiv = document.createElement("div");
+            newDiv.textContent = "Div Before Image";
+            newDiv.className = "my-class";
+            element.before(newDiv);
+            displayOutput("Inserted a div before the image.");
+        }
+
+        // Insert Element: after
+        function afterElement() {
+            const element = document.getElementById("myImage");
+            const newDiv = document.createElement("div");
+            newDiv.textContent = "Div After Image";
+            newDiv.className = "my-class";
+            element.after(newDiv);
+            displayOutput("Inserted a div after the image.");
+        }
+    </script>
+</body>
+</html>
